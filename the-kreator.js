@@ -53,6 +53,7 @@ if (Meteor.isServer) {
 		// code to run on server at startup
 		return Meteor.methods({
 
+			// To be removed when in production!!!
 			removeAllTheodoer: function() {
 					//Erreur si un utilisateur non identifié veut vider la base
 					
