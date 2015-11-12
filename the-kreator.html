@@ -7,8 +7,6 @@
 
 <body>
 	{{> Navigation}}
-
-
 </body>
 
 
@@ -16,7 +14,6 @@
 <!-- Template Main pour page 1 --> 
    
 <template name="Main">
-
 
 	<p class="logo"><img src="images/logo.png" /></p>
 	
@@ -26,7 +23,6 @@
 	<div id="login-screen">
 			{{> loginButtons}} <!-- here -->
 	</div>
-	
 
 </template>
 
@@ -35,8 +31,6 @@
 <!-- Template index pour page 2 --> 
 
 <template name="index">
-
-
 
 	<p class="logo"><img src="images/logo.png" /></p>
 	
@@ -66,8 +60,6 @@
 <!-- Template Formulaire pour page 3 --> 
    
 <template name="Formulaire">
-
-
 	
 	<h1><strong>Formulaire de création du nouveau Theodoer</strong></h1>
 	
@@ -82,6 +74,28 @@
 	
 	{{/if}}	 
 </template>
+
+
+
+
+<template name="TheodoerPage">
+	
+	<h1><strong>Fiche Personnelle</strong></h1>
+	
+	{{#if currentUser}}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					{{> createForm }}
+				</div>
+			</div>
+		</div>  
+	
+	{{/if}}	 
+</template>
+
+
+
 
 
 <!-- Templates Objets Formulaire (Form) --> 
@@ -104,6 +118,11 @@
 			<input type="text" name="email" class="form-control" placeholder="E-mail">
 		</div>
 		
+		<div class="form-group">
+			<label>Compte Github</label>
+			<input type="text" name="comptegithub" class="form-control" placeholder="Compte Github">
+		</div>
+		
 		<button type="submit" class="btn btn-lg" >Créer le Theodoer</button>
 		<button class="btn btn-lg"  onclick="document.location.href='/index';">Annuler</button>
 		
@@ -115,7 +134,7 @@
 
 <template name="theodoer">
 	<li>
-	  <strong>{{prenom}}</strong> {{nom}} - {{email}}
+	  <strong>{{prenom}}</strong> {{nom}} - {{email}} - {{comptegithub}}
 	</li>
 </template>
 

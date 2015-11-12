@@ -36,9 +36,10 @@ if (Meteor.isClient) {
 			var firstname = event.target.prenom.value;
 			var name = event.target.nom.value;
 			var email = event.target.email.value;
+			var githubaccount = event.target.comptegithub.value;
 			// create the new Theodoer
 			if(firstname != "" && name != "" && email != ""){
-				Meteor.call("createTheodoer", firstname, name, email);
+				Meteor.call("createTheodoer", firstname, name, email, githubaccount);
 			}
 			
 			// permet de rerouter vers la page index sans utiliser la fonction href de HTML5
@@ -71,13 +72,12 @@ if (Meteor.isServer) {
     Accounts.validateNewUser(function() {
 		return false;
 	});
-	 
 	
 }
 
 
 Meteor.methods({
-	createTheodoer: function (firstname, name, email) {
+	createTheodoer: function (firstname, name, email, githubaccount) {
 		// Make sure the user is logged in before creating a theodoer
 		if (! Meteor.userId()) {
 			throw new Meteor.Error("not-authorized");
@@ -86,7 +86,8 @@ Meteor.methods({
 		Theodoer.insert({
 			prenom: firstname,
 			nom: name,
-			email: email,	
+			email: email,
+			comptegithub: githubaccount,
 			createdAt: new Date()
 		});
 	},
