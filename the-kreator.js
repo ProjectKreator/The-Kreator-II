@@ -104,7 +104,7 @@ Router.route('/Formulaire', function () {
 
 */
 
-
+ 
 Router.map(function() {
   this.route('Main', {path: '/'});
   this.route('index');
@@ -135,3 +135,16 @@ Router.route('/TheodoerPage', {
 		console.log("This is a Theodoer Page");
 	}
 });
+
+
+/*
+
+La fonction popupUploadForm
+
+*/
+
+
+function popupUploadForm(){
+        var newWindow = window.open('/.html', 'name', 'height=500,width=600');
+    }
+

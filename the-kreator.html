@@ -119,16 +119,61 @@
 			<input type="text" name="email" class="form-control" placeholder="E-mail">
 		</div>
 		
+		
 		<div class="form-group">
-			<label>Login Github</label>
-			<input type="text" name="comptegithub" class="form-control" placeholder="Login Github">
+				<label>Login Github</label>
+				<input type="text" name="Login Github" class="form-control" placeholder="Login Github">
 		</div>
 		
+			
 		<button type="submit" class="btn btn-lg" >Créer le Theodoer</button>
 		<button class="btn btn-lg"  onclick="document.location.href='/index';">Annuler</button>
 		
 	</form>
 </template>
+
+
+<!-- Templates Objets Formulaire (Form) --> 
+
+<template name="UpdateForm">
+
+	<form> 
+		<div class="form-group">
+			<label>Prénom</label>
+			<input type="text" name="prenom" class="form-control" placeholder="Prénom">
+		</div>
+
+		<div class="form-group">
+			<label>Nom</label>
+			<input type="text" name="nom" class="form-control" placeholder="Nom">
+		</div>
+		
+		<div class="form-group">
+			<label>E-mail</label>
+			<input type="text" name="email" class="form-control" placeholder="E-mail">
+		</div>
+
+		
+		<div class="form-group">
+			<label>Login Github</label>
+			 <div class="col-lg-6">
+					<div class="input-group">
+							<input type="text" name="comptegithub" class="form-control" placeholder="Login Github">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button" onclick="popupUploadForm()" >Relier à l'organisation Theodo</button>
+								</span>
+					</div><!-- /input-group -->
+			 </div><!-- /.col-lg-6 -->
+		</div><!-- /.row -->
+			
+		<button type="submit" class="btn btn-lg" >Créer le Theodoer</button>
+		<button class="btn btn-lg"  onclick="document.location.href='/index';">Annuler</button>
+		
+	</form>
+</template>
+
+
+
 
 
 <!-- Templates Objets Theodoers --> 
