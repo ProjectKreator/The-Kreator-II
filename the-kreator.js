@@ -129,3 +129,9 @@ var goToDashboard = function(pause) {
 
 Router.onBeforeAction(mustBeSignedIn, {except: ['Main']});
 Router.onBeforeAction(goToDashboard, {only: ['Main']});
+
+Router.route('/TheodoerPage', {
+	data: function(){
+		console.log("This is a Theodoer Page");
+	}
+});
